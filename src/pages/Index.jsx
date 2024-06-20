@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 
-import { DatePicker } from 'react-day-picker';
+import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import { format, isWithinInterval } from 'date-fns';
 
@@ -33,11 +33,11 @@ const Index = () => {
         <div className="flex space-x-4 mb-4">
           <div>
             <label className="block mb-2">Start Date</label>
-            <DatePicker selected={startDate} onSelect={setStartDate} />
+            <DayPicker selected={startDate} onSelect={setStartDate} />
           </div>
           <div>
             <label className="block mb-2">End Date</label>
-            <DatePicker selected={endDate} onSelect={setEndDate} />
+            <DayPicker selected={endDate} onSelect={setEndDate} />
           </div>
         </div>
         <Card className="w-full max-w-4xl">
