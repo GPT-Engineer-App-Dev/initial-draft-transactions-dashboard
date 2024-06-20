@@ -3,7 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 
-import { DatePickerDemo } from "@/components/ui/date-picker";
+import { DatePicker } from 'react-day-picker';
+import 'react-day-picker/dist/style.css';
 import { format, isWithinInterval } from 'date-fns';
 
 const transactions = [
@@ -30,8 +31,14 @@ const Index = () => {
       </header>
       <main className="w-full flex flex-col items-center mt-8">
         <div className="flex space-x-4 mb-4">
-          <DatePickerDemo label="Start Date" selectedDate={startDate} onChange={setStartDate} />
-          <DatePickerDemo label="End Date" selectedDate={endDate} onChange={setEndDate} />
+          <div>
+            <label className="block mb-2">Start Date</label>
+            <DatePicker selected={startDate} onSelect={setStartDate} />
+          </div>
+          <div>
+            <label className="block mb-2">End Date</label>
+            <DatePicker selected={endDate} onSelect={setEndDate} />
+          </div>
         </div>
         <Card className="w-full max-w-4xl">
           <CardHeader>
